@@ -1,44 +1,4 @@
-#logging.level.org.springframework.security=DEBUG
-#spring.application.name=shop
-#spring.jpa.open-in-view=false
 
-#application.entity.package = "com.shopMicroService.example.entity"
-#spring.cloud.config.uri=http://localhost:8888
-
-#spring.jpa.hibernate.ddl-auto=none
-#spring.jpa.hibernate.ddl-auto=update
-#spring.jpa.database=POSTGRESQL
-#spring.jpa.show-sql = true
-
-#spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
-#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
-
-#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQL10Dialect
-
-#spring.database.driverClassName= org.postgresql.Driver
-
-#spring.datasource.driver-class-name=org.postgresql.Driver
-#
-#spring.jpa.database=postgresql
-
-#spring.jpa.hibernate.naming.strategy = org.hibernate.cfg.ImprovedNamingStrategy
-#spring.datasource.testWhileIdle = true
-#spring.datasource.validationQuery = SELECT 1
-
-#spring.datasource.url = jdbc:postgresql://localhost:5432/shop
-#spring.datasource.username = postgres
-#spring.datasource.password=0510208486q
-
-#spring.datasource.dbcp2.default-schema=public
-
-
-
-#spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-
-#hibernate.show_sql=true
-#hibernate.format_sql=true
-#hibernate.use_sql_comments=true
-#hibernate.generate_statistics=true
 
 server.port=8180
 
