@@ -1,16 +1,16 @@
-server.port=8073
+#server.port=8073
 #spring.application.name=shop-gateway
-spring.application.name=shopGateway
+#spring.application.name=shopGateway
 
-eureka.instance.preferIpAddress = true
-eureka.client.registerWithEureka = true
-eureka.client.fetchRegistry = true
-eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka
+#eureka.instance.preferIpAddress = true
+#eureka.client.registerWithEureka = true
+#eureka.client.fetchRegistry = true
+#eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka
 
 #spring.cloud.loadbalancer.ribbon.enable=false
 
-spring.cloud.gateway.discovery.locator.enabled=true
-spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+#spring.cloud.gateway.discovery.locator.enabled=true
+#spring.cloud.gateway.discovery.locator.lower-case-service-id=true
 
 
 #eureka.instance.preferIpAddress = true
@@ -38,27 +38,26 @@ spring.cloud.gateway.discovery.locator.lower-case-service-id=true
 #spring.cloud.gateway.routes[0].predicates[0]=Path=/products/page/**
 #spring.cloud.gateway.routes[0].predicates[1]=Method=GET
 
-spring.cloud.gateway.routes[0].id=page
-spring.cloud.gateway.routes[0].uri=lb://shop
+#spring.cloud.gateway.routes[0].id=page
+#spring.cloud.gateway.routes[0].uri=lb://shop
+#spring.cloud.gateway.routes.[0].predicates[0]=Path=/**
+#--
 #spring.cloud.gateway.routes.[0].predicates[0]=Path=/products/page/**
 #spring.cloud.gateway.routes.[0].predicates[0]=Path=/products/**
-spring.cloud.gateway.routes.[0].predicates[0]=Path=/**
 #spring.cloud.gateway.routes[0].predicates[1]=Method=GET
 #spring.cloud.gateway.routes.[0].predicates[0]=Path=/products/page/**
 #spring.cloud.gateway.routes[0].predicates[1]=Method=GET
 
-spring.cloud.gateway.routes.[1].id=newG
-#spring.cloud.gateway.routes.[1].uri=http://localhost:8180/
-spring.cloud.gateway.routes[1].uri=lb://shop
-spring.cloud.gateway.routes.[1].predicates[0]=Path=/products/new
-spring.cloud.gateway.routes[1].predicates[1]=Method=GET
+#spring.cloud.gateway.routes.[1].id=newG
+#spring.cloud.gateway.routes[1].uri=lb://shop
+#spring.cloud.gateway.routes.[1].predicates[0]=Path=/products/new
+#spring.cloud.gateway.routes[1].predicates[1]=Method=GET
 
 
-spring.cloud.gateway.routes.[2].id=newP
-#spring.cloud.gateway.routes.[1].uri=http://localhost:8180/
-spring.cloud.gateway.routes[2].uri=lb://shop
-spring.cloud.gateway.routes.[2].predicates[0]=Path=/products/new
-spring.cloud.gateway.routes[2].predicates[1]=Method=POST
+#spring.cloud.gateway.routes.[2].id=newP
+#spring.cloud.gateway.routes[2].uri=lb://shop
+#spring.cloud.gateway.routes.[2].predicates[0]=Path=/products/new
+#spring.cloud.gateway.routes[2].predicates[1]=Method=POST
 
 
 
@@ -96,9 +95,9 @@ spring.cloud.gateway.routes[2].predicates[1]=Method=POST
 
 
 #Keycloak
-spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/auth/realms/spring-microservice
+#spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/auth/realms/spring-microservice
 #spring.security.oauth2.client.registration.keycloak.client-id=shopGateway
-spring.security.oauth2.client.registration.keycloak.client-secret=jaMD1Pv7DFI4RGbGY0BUHjOxGG9PXYRp
+#spring.security.oauth2.client.registration.keycloak.client-secret=jaMD1Pv7DFI4RGbGY0BUHjOxGG9PXYRp
 #spring.security.oauth2.client.registration.oauth2-client-credentials.provider=keycloak
 #spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/realms/spring-microservices-realm
 #spring.security.oauth2.client.registration.keycloak.client-secret=NAptgnXlZSbs0wSXXvZDddcoX5ed96dY
@@ -114,7 +113,55 @@ spring.security.oauth2.client.registration.keycloak.client-secret=jaMD1Pv7DFI4RG
 #spring.security.oauth2.client.registration.keycloak.redirectUri=*
 #spring.security.oauth2.client.registration.keycloak.redirectUri=http://localhost:8073/
 #spring.security.oauth2.client.registration.keycloak-rest.authorization-grant-type=client_credentials
+#yml
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/auth/realms/spring-microservice
+        client:
+          registration:
+            keycloak:
+              client-id: shopGateway
+              client-secret: jaMD1Pv7DFI4RGbGY0BUHjOxGG9PXYRp
+              authorization-grant-type: authorization_code
+
+server:
+  port: 8073
+ 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka
+      
 
 
-
-
+#spring:
+#  zipkin:
+#    baseUrl: http://zipkin:9411
+#  sleuth:
+#    sampler:
+#      percentage: 1
+#  cloud:
+#    loadbalancer.ribbon.enabled: false
+#    gateway:
+#        routes:
+#        - id: organization-service
+          uri: lb://organization-service
+#          predicates:
+#          - Path=/organization/**
+ #         filters:
+ #         - RewritePath=/organization/(?<path>.*), /$\{path}
+  #        - RemoveRequestHeader= Cookie,Set-Cookie
+ #       - id: licensing-service
+ #         uri: lb://licensing-service
+  #        predicates:
+  #        - Path=/license/**
+          filters:
+  #        - RewritePath=/license/(?<path>.*), /$\{path}
+ #         - RemoveRequestHeader= Cookie,Set-Cookie
