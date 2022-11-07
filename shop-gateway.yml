@@ -121,11 +121,11 @@ spring:
         jwt:
           issuer-uri : http://localhost:8080/auth/realms/spring-microservice
         #jwk-set-uri : http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/certs
-        #client:
-          #registration:
-            #keycloak:
-              #client-id: shopGateway
-             # client-secret: MRvszEcOJdm5GLqspj4DqcEkNwxVh6ND
+        client:
+          registration:
+            keycloak:
+              client-id: shopGateway
+              client-secret: MRvszEcOJdm5GLqspj4DqcEkNwxVh6ND
               #authorization-grant-type: authorization_code
   zipkin:
     baseUrl: http://zipkin:9411
