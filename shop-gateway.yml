@@ -126,7 +126,7 @@ spring:
             keycloak:
               client-id: shopGateway
               client-secret: MRvszEcOJdm5GLqspj4DqcEkNwxVh6ND
-              authorization-grant-type: authorization_code
+              #authorization-grant-type: authorization_code
   zipkin:
     baseUrl: http://zipkin:9411
   sleuth:
