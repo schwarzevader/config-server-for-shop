@@ -133,7 +133,7 @@ spring:
               # realm: spring-microservice
               client-id: shopGateway
               client-secret: MRvszEcOJdm5GLqspj4DqcEkNwxVh6ND
-              redirect-uri: http://localhost:8080/auth/shopGateway-service
+              redirect-uri: http://localhost:8073/*
               authorization-grant-type: authorization_code
   zipkin:
     baseUrl: http://zipkin:9411
