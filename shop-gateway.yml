@@ -122,7 +122,7 @@ spring:
           jwk-set-uri : http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/certs
           authorization-uri: http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/auth
           token-uri: http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/token
-          user-info-uri: "http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/userinfo
+         # user-info-uri: "http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/userinfo
             #user-name-attribute: sub
         client:
           registration:
