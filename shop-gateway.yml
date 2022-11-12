@@ -118,10 +118,7 @@ eureka:
 spring:
   security:
     oauth2:
-     client:
-        provider:
-          keycloak:
-      #resourceserver:
+       resourceserver:
         jwt:
           issuer-uri : http://localhost:8080/auth/realms/spring-microservice
           #jwk-set-uri : http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/certs
