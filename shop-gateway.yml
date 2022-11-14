@@ -126,7 +126,7 @@ spring:
           jwk-set-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/certs
           issuer-uri: http://localhost:8080/realms/spring-microservice
           client-id: shop-gateway
-          client-secret: a563e5iUsHp6B712uIgvq3IHZcaIYo2D
+          client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
           authorization-grant-type: authorization_code
 
             
