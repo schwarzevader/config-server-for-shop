@@ -123,6 +123,7 @@ spring:
     oauth2:
       resource-server:
         jwt:
+          introspection-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token/introspect
           jwk-set-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/certs
           issuer-uri: http://localhost:8080/realms/spring-microservice
           client-id: shop-gateway
