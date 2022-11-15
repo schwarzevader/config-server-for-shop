@@ -126,8 +126,8 @@ spring:
   security:
     oauth2:
       resourceserver:
-        #provider:
-          #keycloak:
+        provider:
+          keycloak:
               jwt:
                jwk-set-uri: http://localhost:8080/auth/realms/spring-microservice
                issuer-uri: http://localhost:8080/realms/spring-microservice
