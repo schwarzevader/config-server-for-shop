@@ -117,29 +117,28 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8070/eureka
+      
+      
+      security:
+        oauth2:
+          client:
+            provider:
+              keycloak:
+                issuer-uri: http://localhost:8080/realms/spring-microservice
+                jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
+            registration:
+              client:
+                provider: keycloak
+                client-id: shop-gateway
+                client-secret: FQFchTCC9OgSx2kYzUBOINdqaZXHevHf
+                authorization-grant-type: authorization_code
+                scope:
+                  - email
+                  - profile
+                  - roles
 
 
 
-
-
-
-     security:
-      oauth2:
-        client:
-          provider:
-            keycloak:
-              issuer-uri: http://localhost:8080/realms/spring-microservice
-              jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
-          registration:
-             client:
-              provider: keycloak
-              client-id: shop-gateway
-              client-secret: FQFchTCC9OgSx2kYzUBOINdqaZXHevHf
-              authorization-grant-type: authorization_code
-              scope:
-                - email
-                - profile
-                - roles
 
       zipkin:
         baseUrl: http://zipkin:9411
@@ -148,6 +147,5 @@ eureka:
           percentage: 1
       cloud:
         loadbalancer.ribbon.enabled: false
-                
                 
      
