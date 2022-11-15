@@ -130,7 +130,7 @@ spring:
           keycloak:
               jwt:
                jwk-set-uri: http://localhost:8080/auth/realms/spring-microservice
-              # issuer-uri: http://localhost:8080/realms/spring-microservice
+               issuer-uri: http://localhost:8080/realms/spring-microservice
         client:
           registration:
             keycloak:
