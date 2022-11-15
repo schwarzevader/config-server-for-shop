@@ -126,14 +126,14 @@ spring:
   security:
     oauth2:
       resourceserver:
-        provider:
-          keycloak:
+        #provider:
+          #keycloak:
               jwt:
                jwk-set-uri: http://localhost:8080/auth/realms/spring-microservice
                issuer-uri: http://localhost:8080/realms/spring-microservice
         client:
           registration:
-            keycloak:
+            #keycloak:
               client-id: shop-gateway
               client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
               authorization-grant-type: authorization_code
