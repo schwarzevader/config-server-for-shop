@@ -129,7 +129,7 @@ spring:
           keycloak-spring-gateway-client:
             provider: my-keycloak-provider
             client-id: shop-gateway
-            client-secret: fQnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
+            client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
             authorization-grant-type: authorization_code
             redirect-uri: 'http://localhost:8073/*'
 
