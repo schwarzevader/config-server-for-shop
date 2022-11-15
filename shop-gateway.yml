@@ -122,22 +122,22 @@ eureka:
 
 
 
-    security:
-      oauth2:
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        provider:
+          keycloak:
+              jwt:
+               jwk-set-uri: http://localhost:8080/auth/realms/spring-microservice
+              # issuer-uri: http://localhost:8080/realms/spring-microservice
         client:
-          provider:
-            keycloak:
-              issuer-uri: http://localhost:8080/realms/spring-microservice
-              jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
           registration:
-            quotes-client:
-              provider: keycloak
+            keycloak:
               client-id: shop-gateway
               client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
-              scope:
-                - email
-                - profile
-                - roles
+              authorization-grant-type: authorization_code
+              
                   
       zipkin:
         baseUrl: http://zipkin:9411
