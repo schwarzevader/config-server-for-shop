@@ -129,9 +129,9 @@ eureka:
           provider:
             keycloak:
               issuer-uri: http://localhost:8080/realms/spring-microservice
-              #jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
+              jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
           registration:
-              client:
+             client:
               provider: keycloak
               client-id: shop-gateway
               client-secret: FQFchTCC9OgSx2kYzUBOINdqaZXHevHf
