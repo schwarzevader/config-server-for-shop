@@ -126,17 +126,13 @@ spring:
   security:
     oauth2:
       resourceserver:
-        provider:
-          keycloak:
-              jwt:
-               jwk-set-uri: http://localhost:8080/auth/realms/spring-microservice
-               issuer-uri: http://localhost:8080/realms/spring-microservice
-        client:
-          registration:
-            keycloak:
-              client-id: shop-gateway
-              client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
-              authorization-grant-type: authorization_code
+        jwt:
+          introspection-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token/introspect
+          jwk-set-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/realms/spring-microservice
+          client-id: shop-gateway
+          client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
+          authorization-grant-type: authorization_code
               
                   
       zipkin:
