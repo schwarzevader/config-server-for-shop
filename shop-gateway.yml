@@ -122,18 +122,14 @@ eureka:
 
 
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          token-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token
-          introspection-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token/introspect
-          jwk-set-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/certs
-          issuer-uri: http://localhost:8080/realms/spring-microservice
-          client-id: shop-gateway
-          client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
-          authorization-grant-type: authorization_code
+    spring:
+      security:
+        oauth2:
+          resourceserver:
+            opaquetoken:
+              introspection-uri: http://localhost:8083/realms/spring-microservices/protocol/openid-connect/token/introspect
+              client-id: shop-gateway
+              client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
               
                   
       zipkin:
