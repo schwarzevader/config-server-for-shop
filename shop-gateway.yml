@@ -133,7 +133,7 @@ spring:
                issuer-uri: http://localhost:8080/realms/spring-microservice
         client:
           registration:
-            #keycloak:
+            keycloak:
               client-id: shop-gateway
               client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
               authorization-grant-type: authorization_code
