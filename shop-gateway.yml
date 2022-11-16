@@ -30,6 +30,7 @@ spring:
         client:
           registration:
             keycloak:
+              scope: openid
               client-id: shop-gateway
               client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
               authorization-grant-type: authorization_code
