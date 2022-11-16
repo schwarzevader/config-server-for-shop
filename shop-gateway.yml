@@ -131,6 +131,8 @@ spring:
             jwt:
               jwk-set-uri: http://localhost:8080/auth/realms/spring-microservice
               issuer-uri: http://localhost:8080/realms/spring-microservice
+              authorization-uri: http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/auth
+              token-uri: http://localhost:8080/auth/realms/spring-microservice/protocol/openid-connect/token
         client:
           registration:
             keycloak:
