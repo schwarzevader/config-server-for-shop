@@ -19,11 +19,26 @@ eureka:
 spring:
   security:
     oauth2:
-      resourceserver:
+      client:
+        registration:
+          keycloak:
+            client-id: shop-gateway
+            client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
+            #clientName: Keycloak
+            authorization-grant-type: authorization_code
+            redirectUri: 'http://localhost:8073/*'
+            scope:
+              - openid
+              - profile
+              - email
         provider:
           keycloak:
-            jwt:
-              issuer-uri: http://localhost:8080/realms/spring-microservice
+            authorization-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/auth
+            user-info-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+            issuer-uri: http://localhost:8080/realms/spring-microservice
+            jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
+            token-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token
 
 
 
