@@ -34,7 +34,7 @@ spring:
               client-id: shop-gateway
               client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
               authorization-grant-type: authorization_code
-              redirect-uri: "http://localhost:8080/login/oauth2/code/keycloak"
+              #redirect-uri: "http://localhost:8080/login/oauth2/code/keycloak"
 
 
       zipkin:
