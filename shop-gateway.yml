@@ -26,7 +26,7 @@ spring:
             client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
             clientName: Keycloak
             authorization-grant-type: authorization_code
-            redirectUri: 'http://localhost:8080/login/oauth2/code/shop-gateway'
+            redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
             scope:
               - openid
               - profile
@@ -40,6 +40,11 @@ spring:
             jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
             token-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token
 
+
+  cloud:
+    gateway:
+      default-filters:
+      - TokenRelay
 
 
       zipkin:
