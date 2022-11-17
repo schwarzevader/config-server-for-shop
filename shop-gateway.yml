@@ -28,7 +28,7 @@ spring:
           keycloak:
             client-id: shop-gateway
             client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
-            clientName: Keycloak
+            clientName: shop-gateway
             authorization-grant-type: authorization_code
             redirectUri: '{baseUrl}/login/oauth2/code/{shop-gateway}'
             scope:
