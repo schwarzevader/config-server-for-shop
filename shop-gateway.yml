@@ -17,6 +17,10 @@ eureka:
 
 
 spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
   security:
     oauth2:
       client:
@@ -35,16 +39,13 @@ spring:
           keycloak:
             authorization-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/auth
             user-info-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/userinfo
-            #user-name-attribute: preferred_username
+            user-name-attribute: preferred_username
             issuer-uri: http://localhost:8080/realms/spring-microservice
             jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
             token-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token
 
 
-  cloud:
-    gateway:
-      default-filters:
-      - TokenRelay
+
 
 
       zipkin:
