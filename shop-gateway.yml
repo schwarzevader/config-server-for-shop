@@ -26,7 +26,7 @@ spring:
             client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
             clientName: Keycloak
             authorization-grant-type: authorization_code
-            redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            redirectUri: '{baseUrl}/login/oauth2/code/{shop-gateway}'
             scope:
               - openid
               - profile
