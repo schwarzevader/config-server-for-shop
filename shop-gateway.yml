@@ -24,7 +24,7 @@ spring:
           keycloak:
             client-id: shop-gateway
             client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
-            #clientName: Keycloak
+            clientName: Keycloak
             authorization-grant-type: authorization_code
             redirectUri: 'http://localhost:8080/login/oauth2/code/shop-gateway'
             scope:
@@ -35,7 +35,7 @@ spring:
           keycloak:
             authorization-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/auth
             user-info-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/userinfo
-            user-name-attribute: preferred_username
+            #user-name-attribute: preferred_username
             issuer-uri: http://localhost:8080/realms/spring-microservice
             jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
             token-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token
