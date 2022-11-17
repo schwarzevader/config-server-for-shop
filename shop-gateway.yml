@@ -30,7 +30,7 @@ spring:
             client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
             clientName: shop-gateway
             authorization-grant-type: authorization_code
-            redirectUri: '{baseUrl}/login/oauth2/code/{shop-gateway}'
+            redirectUri: '{baseUrl}/login/oauth2/code/shop-gatewa'
             scope:
               - openid
               - profile
