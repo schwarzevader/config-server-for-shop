@@ -31,7 +31,7 @@ spring:
             clientName: shop-gateway
             authorization-grant-type: authorization_code
             #redirectUri: 'http://localhost:8073/login/oauth2/code/shop-gateway' {baseUrl}/login/oauth2/code/keycloak
-            redirectUri: '{baseUrl}/*
+            redirectUri: '{baseUrl}/*'
             scope:
               - openid
               - profile
