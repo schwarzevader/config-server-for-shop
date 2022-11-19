@@ -17,33 +17,19 @@ eureka:
 
 
 spring:
-  cloud:
-    gateway:
-      default-filters:
-        - TokenRelay
   security:
     oauth2:
       client:
-        registration:
-          keycloak:
-            client-id: shop-gateway
-            client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
-            clientName: shop-gateway
-            authorization-grant-type: authorization_code
-            #redirectUri: 'http://localhost:8073/login/oauth2/code/shop-gateway' {baseUrl}/login/oauth2/code/keycloak
-            redirectUri: '*'
-            scope:
-              - openid
-              - profile
-              - email
         provider:
-          keycloak:
-            authorization-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/auth
-            user-info-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/userinfo
-            user-name-attribute: preferred_username
-            issuer-uri: http://localhost:8080/realms/spring-microservice
-            jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
-            token-uri: http://localhost:8080/realms/spring-microservice/protocol/openid-connect/token
+          my-keycloak-provider:
+            issuer-uri: ttp://localhost:8080/realms/spring-microservice
+        registration:
+          keycloak-spring-gateway-client:
+            provider: my-keycloak-provider
+            client-id: hop-gateway
+            client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
 
 
 
