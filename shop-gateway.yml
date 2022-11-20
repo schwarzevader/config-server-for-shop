@@ -33,8 +33,8 @@ spring:
 
   cloud:
     gateway:
-      #default-filters:
-       # - TokenRelay
+      default-filters:
+        - TokenRelay
       routes:
         - id: shop
           uri: hhttp://localhost:8180
