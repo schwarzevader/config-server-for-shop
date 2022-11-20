@@ -30,16 +30,16 @@ spring:
             authorization-grant-type: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
 
+
   cloud:
     gateway:
-      default-filters:
-        - TokenRelay
-        routes:
-          - id: shop
-          uri: http://localhost:8180
+      #default-filters:
+       # - TokenRelay
+      routes:
+        - id: shop
+          uri: hhttp://localhost:8180
           predicates:
             - Path=/shop/**
-
 
 
      
