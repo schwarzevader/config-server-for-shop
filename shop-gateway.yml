@@ -15,6 +15,15 @@ eureka:
 
 
 spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: shop
+          uri : http://localhost:8180
+          predicates:
+           - Path=/shop/**
   security:
     oauth2:
       client:
@@ -29,30 +38,10 @@ spring:
             client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
             authorization-grant-type: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
-
-
-
-
-
-      #zipkin:
-        #baseUrl: http://zipkin:9411
-     # sleuth:
-       # sampler:
-         # percentage: 1
-      cloud:
-        loadbalancer.ribbon.enabled: false
-        gateway:
-          default-filters:
-            - TokenRelay
-          routes:
-            - id: shop
-            uri: hhttp://localhost:8180
-            predicates:
-              - Path=/shop/**
-     
+          
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"   
 
