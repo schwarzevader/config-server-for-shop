@@ -19,11 +19,11 @@ spring:
     gateway:
       default-filters:
         - TokenRelay
-      routes:
-        - id: shop
-          uri : lb://shop
-          predicates:
-          - Path=/shop/**
+      #routes:
+        #- id: shop
+          #uri : lb://shop
+          #predicates:
+          #- Path=/shop/**
   security:
     oauth2:
       client:
