@@ -31,17 +31,24 @@ spring:
             redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
 
 
-  cloud:
-    gateway:
-      default-filters:
-        - TokenRelay
-      routes:
-        - id: shop
-          uri: hhttp://localhost:8180
-          predicates:
-            - Path=/shop/**
 
 
+
+      zipkin:
+        baseUrl: http://zipkin:9411
+      sleuth:
+        sampler:
+          percentage: 1
+      cloud:
+        loadbalancer.ribbon.enabled: false
+        gateway:
+          default-filters:
+            - TokenRelay
+          routes:
+            #- id: shop
+            uri: hhttp://localhost:8180
+            predicates:
+              - Path=/shop/**
      
 
 
