@@ -21,7 +21,7 @@ spring:
         - TokenRelay
       routes:
         - id: shop
-          uri : http://localhost:8180
+          uri : lb://shop
           predicates:
           - Path=/shop/**
   security:
