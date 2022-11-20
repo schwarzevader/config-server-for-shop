@@ -22,15 +22,15 @@ spring:
       routes:
         - id: shop
           uri : http://localhost:8180
-         predicates:
-           - Path=/shop/**
+          predicates:
+          - Path=/shop/**
   security:
     oauth2:
       client:
         provider:
           my-keycloak-provider:
             issuer-uri: http://localhost:8080/realms/spring-microservice
-            #jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
+            jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
         registration:
           keycloak-spring-gateway-client:
             provider: my-keycloak-provider
@@ -38,10 +38,10 @@ spring:
             client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
             authorization-grant-type: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
-          
+
 management:
   endpoints:
     web:
       exposure:
-        include: "*"   
+        include: "*" 
 
