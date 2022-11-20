@@ -34,5 +34,14 @@ spring:
     gateway:
       default-filters:
         - TokenRelay
+        routes:
+          id: shop
+          uri: http://localhost:8180
+          predicates:
+            - Path=/shop/**
+
+
+
+     
 
 
