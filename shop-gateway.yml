@@ -36,13 +36,3 @@ spring:
         - TokenRelay
 
 
-
-
-      zipkin:
-        baseUrl: http://zipkin:9411
-      sleuth:
-        sampler:
-          percentage: 1
-      cloud:
-        loadbalancer.ribbon.enabled: false
-     
