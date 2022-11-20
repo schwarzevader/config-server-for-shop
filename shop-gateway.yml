@@ -45,10 +45,14 @@ spring:
           default-filters:
             - TokenRelay
           routes:
-            #- id: shop
+            - id: shop
             uri: hhttp://localhost:8180
             predicates:
               - Path=/shop/**
      
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
