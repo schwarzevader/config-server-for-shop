@@ -43,8 +43,7 @@
 
 #ylm
 
-
-erver:
+server:
   port: 8180
 
 eureka:
@@ -63,4 +62,21 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/spring-microservice
           jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
-          
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.jdbc.batch_size: 20
+      hibernate.cache.use_query_cache: false
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_structured_entries: false
+      hibernate.cache.use_minimal_puts: false
+  datasource:
+    #SPRING_DATASOURCE_URL environment variable will be something like -> jdbc:sqlserver://MySqlServer\\MyInstance:1433;DatabaseName=MyDbName;
+    url: jdbc:postgresql://localhost:5432/cloudshop
+    username: postgres
+    password: 0510208486q
+    driverClassName: org.hibernate.dialect.PostgreSQLDialect
+
