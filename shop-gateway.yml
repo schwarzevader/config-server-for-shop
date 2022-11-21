@@ -15,7 +15,8 @@ eureka:
 
 
 spring:
-  #cloud:
+  cloud:
+   loadbalancer.ribbon.enabled: false
     #gateway:
       #default-filters:
         #- TokenRelay
