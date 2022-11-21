@@ -15,16 +15,16 @@ eureka:
 
 
 spring:
-  #cloud:
-    #gateway:
+  cloud:
+    gateway:
       #default-filters:
         #- TokenRelay
-      #routes:
-        #- id: shop
-          #uri : lb://shop
+      routes:
+        - id: shop
+          uri : lb://shop
           #uri : http://localhost:8180
-          #predicates:
-          #- Path=/shop/**
+          predicates:
+          - Path=/shop/**
   security:
     oauth2:
       client:
