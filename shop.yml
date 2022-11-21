@@ -1,0 +1,66 @@
+#properties
+
+#server.port=8180
+
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.datasource.url=jdbc:postgresql://localhost:5432/cloudshop
+#spring.datasource.username=postgres
+#spring.datasource.password=0510208486q
+
+# ===============================
+# JPA / HIBERNATE
+# ===============================
+
+#spring.jpa.show-sql=true
+#spring.jpa.properties.hibernate.show_sql=true
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.jpa.properties.hibernate.use_sql_comments=true
+#spring.jpa.properties.hibernate.generate_statistics=true
+#spring.jpa.hibernate.ddl-auto= update
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+
+# Fix Postgres JPA Error:
+# Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
+#spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+
+#eureka.instance.preferIpAddress = true
+#eureka.client.registerWithEureka = true
+#eureka.client.fetchRegistry = true
+#eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka
+
+#spring.security.oauth2.resourceserver.jwt.issuer-uri= http://localhost:8080/realms/spring-microservice
+
+#keycloak.realm = spring-microservices
+#---keycloak.auth-server-url =http://localhost:8080/realms/spring-microservices
+#keycloak.auth-server-url =http://localhost:8080/auth/realms/spring-microservice
+#keycloak.ssl-required = external
+#keycloak.resource = shopGateway
+#keycloak.credentials.secret =8epNaiEa4JxzrKoq1Is4nGkTalxALdi9
+#keycloak.use-resource-role-mappings = true
+#keycloak.bearer-only = true
+
+
+#ylm
+
+
+erver:
+  port: 8180
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/spring-microservice
+          jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
+          
