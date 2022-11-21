@@ -15,10 +15,10 @@ eureka:
 
 
 spring:
-  cloud:
-    gateway:
-      default-filters:
-        - TokenRelay
+  #cloud:
+    #gateway:
+      #default-filters:
+        #- TokenRelay
       #routes:
         #- id: shop
           #uri : lb://shop
