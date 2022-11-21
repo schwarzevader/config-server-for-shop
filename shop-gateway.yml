@@ -1,5 +1,25 @@
 
 
+#server.port=8073
+
+#eureka.instance.preferIpAddress = true
+#eureka.client.registerWithEureka = true
+#eureka.client.fetchRegistry = true
+#eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka
+
+#spring.cloud.gateway.discovery.locator.enabled=true
+#spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+
+#spring.security.oauth2.client.provider.keycloak.issuer-uri=
+#spring.security.oauth2.client.registration.oauth2-client-credentials.client-id=
+#spring.security.oauth2.client.registration.oauth2-client-credentials.client-secret=
+#spring.security.oauth2.client.registration.oauth2-client-credentials.scope=openid, profile, roles
+#spring.security.oauth2.client.registration.oauth2-client-credentials.authorization-grant-type=client_credentials
+#spring.security.oauth2.client.registration.oauth2-client-credentials.redirect-uri=
+#spring.security.oauth2.client.registration.oauth2-client-credentials.provider=keycloak
+
+#yml
+
 server:
   port: 8073
 
@@ -16,16 +36,19 @@ eureka:
 
 spring:
   cloud:
-   loadbalancer.ribbon.enabled: false
-    #gateway:
+    loadbalancer.ribbon.enabled: false
+  gateway:
+    discovery:
+      locator:
+        enabled: true
       #default-filters:
-        #- TokenRelay
+      #- TokenRelay
       #routes:
-        #- id: shop
-          #uri : lb://shop
-          #uri : http://localhost:8180
-          #predicates:
-          #- Path=/shop/**
+      #- id: shop
+      #uri : lb://shop
+      #uri : http://localhost:8180
+      #predicates:
+    #- Path=/shop/**
   security:
     oauth2:
       client:
@@ -45,5 +68,5 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*" 
+        include: "*"
 
