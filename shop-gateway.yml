@@ -35,8 +35,8 @@ eureka:
 spring:
   cloud:
    gateway:
-      default-filters:
-        - TokenRelay
+      #default-filters:
+        #- TokenRelay
      discovery.locator:
       enabled: true
       lowerCaseServiceId: true
