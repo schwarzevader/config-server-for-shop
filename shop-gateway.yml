@@ -34,12 +34,12 @@ eureka:
       defaultZone: http://localhost:8070/eureka
 spring:
   cloud:
-   gateway:
-      #default-filters:
-        #- TokenRelay
-     discovery.locator:
-      enabled: true
-      lowerCaseServiceId: true
+    gateway:
+      default-filters:
+        - TokenRelay
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
   security:
     oauth2:
       client:
