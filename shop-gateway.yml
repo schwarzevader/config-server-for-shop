@@ -38,7 +38,20 @@ spring:
      discovery.locator:
       enabled: true
       lowerCaseServiceId: true
-
+  security:
+    oauth2:
+      client:
+        provider:
+          my-keycloak-provider:
+            issuer-uri: http://localhost:8080/realms/spring-microservice
+            jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
+        registration:
+          keycloak-spring-gateway-client:
+            provider: my-keycloak-provider
+            client-id: shop-gateway
+            client-secret: QnxC5oWMzzfzxH9v9zSKIGCmeWvbX9pB
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
 
 management:
   endpoints:
