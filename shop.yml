@@ -60,7 +60,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/realms/spring-microservice
+          #issuer-uri: http://localhost:8080/realms/spring-microservice
+          issuer-uri: http://localhost:8080/auth/realms/spring-microservice
           #jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
 
   jpa:
