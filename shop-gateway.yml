@@ -45,7 +45,7 @@ spring:
       client:
         provider:
           my-keycloak-provider:
-            issuer-uri: issuer-uri: http://localhost:8080/auth/realms/spring-microservice
+            issuer-uri: http://localhost:8080/auth/realms/spring-microservice
             jwk-set-uri: http://localhost:8080/auth/realms/spring-microservices/protocol/openid-connect/certs
         registration:
           keycloak-spring-gateway-client:
