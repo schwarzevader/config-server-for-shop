@@ -51,7 +51,7 @@ spring:
           keycloak-spring-gateway-client:
             provider: my-keycloak-provider
             client-id: shop-gateway
-            client-secret: NVlXAfrwhiDRcJCvSf6p5OPzLJqLGweQ
+            client-secret: zfMO0UE95XdR7CFElKM0R2MdHTs6QckS
             authorization-grant-type: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
 
