@@ -32,7 +32,9 @@ spring:
       hibernate.cache.use_minimal_puts: false
   datasource:
     #SPRING_DATASOURCE_URL environment variable will be something like -> jdbc:sqlserver://MySqlServer\\MyInstance:1433;DatabaseName=MyDbName;
-    url: jdbc:postgresql://localhost:5432/products
+    url: jdbc:postgresql://localhost:5432/cloudshop
     username: postgres
     password: 0510208486q
     #driverClassName: org.hibernate.dialect.PostgreSQLDialect
+
+
