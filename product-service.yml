@@ -22,9 +22,9 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      #ddl-auto: update
+      ddl-auto: update
       #ddl-auto: create-drop
-      ddl-auto: create
+      #ddl-auto: create
       dialect: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate.jdbc.batch_size: 20
