@@ -10,9 +10,20 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8070/eureka
 
+server:
+  port: 8182
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka
 
-  jpa:
+spring:
+ jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
