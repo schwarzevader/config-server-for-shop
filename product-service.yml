@@ -10,6 +10,13 @@ server:
     #serviceUrl:
       #defaultZone: http://localhost:8070/eureka
 
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+
 spring:
   security:
     oauth2:
