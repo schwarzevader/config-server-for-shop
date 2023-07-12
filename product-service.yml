@@ -17,15 +17,15 @@ logging:
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          #issuer-uri: http://localhost:8080/realms/spring-microservice
-          #issuer-uri: http://localhost:8080/auth/realms/spring-microservice
-          issuer-uri: http://localhost:9000
-          #jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
+# spring:
+#   security:
+#     oauth2:
+#       resourceserver:
+#         jwt:
+#           #issuer-uri: http://localhost:8080/realms/spring-microservice
+#           #issuer-uri: http://localhost:8080/auth/realms/spring-microservice
+#           issuer-uri: http://localhost:9000
+#           #jwk-set-uri: http://localhost:8080/realms/spring-microservices/protocol/openid-connect/certs
 
   jpa:
     show-sql: true
@@ -35,11 +35,11 @@ spring:
       #ddl-auto: create
       dialect: org.hibernate.dialect.PostgreSQLDialect
     properties:
-      hibernate.jdbc.batch_size: 20
-      hibernate.cache.use_query_cache: false
-      hibernate.cache.use_second_level_cache: false
-      hibernate.cache.use_structured_entries: false
-      hibernate.cache.use_minimal_puts: false
+      # hibernate.jdbc.batch_size: 20
+      # hibernate.cache.use_query_cache: false
+      # hibernate.cache.use_second_level_cache: false
+      # hibernate.cache.use_structured_entries: false
+      # hibernate.cache.use_minimal_puts: false
   datasource:
     #SPRING_DATASOURCE_URL environment variable will be something like -> jdbc:sqlserver://MySqlServer\\MyInstance:1433;DatabaseName=MyDbName;
     url: jdbc:postgresql://localhost:5432/products
